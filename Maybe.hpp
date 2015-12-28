@@ -5,8 +5,6 @@
 #include <memory>
 #include <new>
 
-/** Option type for copyable types.
- */
 template<typename T>
 class Maybe
 {
