@@ -26,8 +26,10 @@ public:
    bool isNothing() const;
    bool isJust() const;
 
+private:
    const T& value_type() const;
 
+public:
    template<typename Functor>
    auto map(Functor f) const -> Maybe<decltype(f(value_type()))>
    {
