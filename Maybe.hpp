@@ -77,7 +77,7 @@ void maybe_do(FunctorJust fJust, FunctorNothing fNothing, const Maybe<T>& m)
 
 template<typename T>
 Maybe<T>::Maybe()
-   : set(false), memory()
+   : set(false)
 {
 }
 
@@ -197,6 +197,13 @@ OutputStream& operator<<(OutputStream& os, const Maybe<T>& m)
             [&os]() { os << "Nothing"; },
             m);
    return os;
+}
+
+/* Classic comparison operator */
+template<typename T>
+bool operator<(const Maybe<T>& a, const Maybe<T>& b)
+{
+   return a.isJust() && b.isJust() && a.fromJust() < b.fromJust();
 }
 
 #endif
