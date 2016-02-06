@@ -139,6 +139,7 @@ Maybe<T>& Maybe<T>::operator=(Maybe<T>&& other)
             {
                set = false;
             }, other);
+   return *this;
 }
 
 template<typename T>
