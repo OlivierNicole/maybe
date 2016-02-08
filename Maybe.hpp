@@ -89,8 +89,8 @@ Maybe<T>::~Maybe()
 
 template<typename T>
 constexpr Maybe<T>::Maybe(const Maybe<T>& other)
+   : set(other.set), memory(other.memory)
 {
-   operator=(other);
 }
 
 template<typename T>
