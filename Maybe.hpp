@@ -25,7 +25,7 @@ public:
    bool isJust() const;
 
 private:
-   const T& value_type() const;
+   static const T& value_type();
 
 public:
    template<typename Functor>
@@ -174,7 +174,7 @@ const T* Maybe<T>::ptr() const
 }
 
 template<typename T>
-const T& Maybe<T>::value_type() const
+const T& Maybe<T>::value_type()
 {
    return *((T*)nullptr);
 }
